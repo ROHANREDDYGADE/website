@@ -139,7 +139,7 @@ a{
     top: 115%;
     right: 7%;
     background-color: #fff;
-    width: 50rem;
+    width: 80%;
     height: 5rem;
     display: flex;
     align-items: center;
@@ -195,10 +195,12 @@ a{
     background-color: #fff;
     box-shadow: 0px 20px 14px 0px rgba(0 0 0 / 75%);
     right: -100%;
+    display: none;
 }
 
 .header .cart-items-container.active{
     right: 3rem;
+    display: block;
 }
 
 .header .cart-items-container .cart-item{
@@ -603,24 +605,31 @@ a{
         font-size: 3.4rem;
     }
 }
-
-@media (max-width: 768px){
-    .header #menu-btn{
+body {
+    overflow-x: hidden;
+}
+@media (max-width: 768px) {
+    .header #menu-btn {
         display: inline-block;
     }
-    .header .navbar{
+
+    .header .navbar {
+        display: none;
+    }
+
+    /* Show navbar when it has 'active' class */
+    .header .navbar.active {
+        display: block;
         position: absolute;
         top: 100%;
         background-color: #fff;
-        height: calc(100vh - 9rem);
+        /* height: calc(100vh - 9rem); */
         width: 30rem;
         box-shadow: 0px 20px 14px 0px rgb(0 0 0 / 75%);
-        right: -100%;
+        right: 0;
     }
-    .header .navbar.active{
-        right: 3rem;
-    }
-    .header .navbar a{
+
+    .header .navbar a {
         color: var(--black-color);
         display: block;
         margin: 1.5rem;
@@ -628,6 +637,12 @@ a{
         font-size: 2rem;
     }
 }
+
+/* Optional: Prevent horizontal scrollbar */
+body {
+    overflow-x: hidden;
+}
+
 
 @media (max-width: 768px){
     html{
